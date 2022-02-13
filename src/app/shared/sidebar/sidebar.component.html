@@ -1,0 +1,33 @@
+<div class="bg-warning border-right p-3" id="sidebar">
+  <h3 class="text-light bg-dark">GifApp</h3>
+    <hr class="text-white"/>
+
+    <div class="list-group list-reset">
+      <a *ngFor="let item of historial"
+      (click)="buscar( item )"
+      href="#"
+      class="list-group-item
+      list-group-item-action
+      shadow p-3 mb-4 bg-white rounded
+      ">
+      {{ item | titlecase }}</a>
+    </div>
+</div>
+
+
+<!--
+  Con (click)="buscar(item)", después desarrollado en el sidebar.component.ts dentro de la clase
+  exportada SidebarComponent, lo que estamos logrando es que, sobre las búsquedas que se registran y
+  persisten en el sidebar, podemos clickar en ellas para recuperarlas.
+
+  Con *ngFor="let item of historial":
+  Recorremos todos los items que se crean en historial (lo que escribimos en búsqueda+enter)
+  Con {{ item }}:
+  introducimos ese item recorrido en el list-group de este sidebar que estamos editando.
+  Como hemos aplicado el método unshift() en nuestro sidebar, lo último que introducimos
+  siempre lo vamos a ver en primer lugar.
+
+  {{ item | titlecase }}
+  titlecase es un pipe; capitaliza la primera letra de cada palabra del Item (da estilo). La sintaxis
+  de un pipe es: {{value | pipeAUtilizar}}
+-->

@@ -1,0 +1,12 @@
+<h5 class="text-light bg-dark">Buscar:</h5>
+<input
+  type="text"
+  class="form-control shadow p-1.5 mb-2 bg-white rounded"
+  placeholder="Buscar gifs..."
+  (keyup.enter)="buscar()"
+  #txtBuscar
+>
+<!--Referencia local: #nombre, con el corchete delante, es para crear
+una referencia local, cuyo valor después pediré que se retorne.
+En este caso, "txt.value" es lo que está mandando "buscar", y así lo tendremos
+que tipar en el export class BusquedaComponent del .ts-->
